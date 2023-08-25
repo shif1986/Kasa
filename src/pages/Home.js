@@ -7,10 +7,10 @@ import Footer from "../Components/Footer";
 const Home = () => {
   return (
     <div className="container">
-      <Header />
+  
       <Banner />
       <Card gallery={data} />
-      <Footer />
+      
     </div>
   );
 };
