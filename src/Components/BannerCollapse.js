@@ -5,7 +5,7 @@ import AboutBanner from "../assets/about_banner.jpg";
 
 
 const BannerCollapse = () => {
-  return <img className="about-banner" src={AboutBanner} alt="Banner image" />;
+  return <img className="banner-about" src={AboutBanner} alt="Banner image" />;
 };
 
 export default BannerCollapse;

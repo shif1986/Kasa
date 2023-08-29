@@ -11,9 +11,9 @@ function Collapse({ title, description }) {
   const toggle = () => {
     // if (isOpen) {
     //   buttonLabel= "Close"
- 
+
     // } else {
- 
+
     //   buttonLabel="Open"
     // }
     setIsOpen(!isOpen);
@@ -21,13 +21,19 @@ function Collapse({ title, description }) {
 
   return (
     <div>
-      <div onClick={toggle}>
+      <div className="content" onClick={toggle}>
         {" "}
-        <p>{title}</p>
-        {/* il faut que description affiche */}
-        {isOpen ? <button> Close </button> : <button className="arrow-up"> <i class="fa-brands fa-facebook"></i> </button>}
-        {isOpen && <div> {description} </div>}
+        <div className="headline">
+          <p>{title}</p>
+          {/* il faut que description affiche */}
+          {isOpen ? (
+            <i className="chevron-up" class="fa-solid fa-chevron-down"></i>
+          ) : (
+            <i className="chevron-down" class="fa-solid fa-chevron-up"></i>
+          )}
+        </div>
       </div>
+      {isOpen && <div className="description"> {description} </div>}
     </div>
   );
 }
