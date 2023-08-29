@@ -5,6 +5,7 @@ import data from "../data.json";
 import Footer from "../Components/Footer";
 import Collapse from "../Components/Collapse";
 import BannerCollapse from "../Components/BannerCollapse";
+import "../style/components/_collapse.scss";
 
 // COMPOSANT PARENT
 const About = () => {

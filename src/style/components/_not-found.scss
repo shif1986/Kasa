@@ -1,0 +1,37 @@
+.erreur-code {
+  font-size: 245px;
+  color: #ff6060;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.erreur-message {
+  color: #ff6060;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.erreur-home a {
+  color: #ff6060;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  margin: 100px 0 100px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .erreur-code {
+    font-size: 96px;
+  }
+
+  .erreur-message {
+    font-size: 18px;
+    display: flex;
+    text-align: center;
+  }
+  .erreur-home a {
+    font-size: 14px;
+   
+  }
+}

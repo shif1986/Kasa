@@ -1,31 +1,59 @@
-.collapse-container title {
-  width: 50%;
-  background-color: red;
-}
-
-.about-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  border-radius: 10px;
-  padding: 30px;
-}
-.container-collapse p {
-  width: 1023px;
-  background-color: #FF6060;
-  color: #fff;
-  font-size: 24px;
-  height: 52px;
-  padding: 10px 20px 10px 15px;
-  border-radius: 5px;
-}
-.container-collapse {
+$backround-colors: #ff6060;
+$font-color: #ffffff;
+$relative: relative;
+@mixin flex-center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.arrow-up{
-    color: aqua;
+
+.container-collapse p {
+  width: 1023px;
+  background-color: $backround-colors;
+  color: $font-color;
+  font-size: 24px;
+  height: 52px;
+  padding: 10px 20px 10px 15px;
+  border-radius: 5px;
+}
+.content {
+  @include flex-center();
+  position: $relative;
+
+  .fa-solid {
+    font-size: 24px;
+    display: flex;
+    justify-content: end;
+    position: relative;
+    bottom: 35px;
+    right: 25px;
+    color: $font-color;
+    // transform: .8s ease-in-out;
+    // transform:rotate(45deg);
+    transition: all 1s ease-out;
+    > .description {
+      overflow-wrap: break-word;
+      inline-size: 64rem;
+      padding: 15px;
+      background-color: #f6f6f6;
+      color: $backround-colors;
+      margin: -25px 0 20px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-collapse p {
+    width: 335px;
+  }
+  .banner-about {
+    padding: 20px;
+    width: 100%;
+    height: 150px;
+  }
+
+  .description {
+    inline-size: 21rem;
+  }
 }
