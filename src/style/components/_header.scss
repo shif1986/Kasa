@@ -1,29 +1,32 @@
 /*************   STYLE HEADER *************/
 
 .navbar {
-  margin: 30px;
+  margin: 30px 50px 50px 50px;
   display: flex;
   justify-content: space-between;
-}
+  align-items: center;
 
-.navbar__link {
-  font-family: Montserrat, sans-serif;
-  font-size: 24px;
-  font-weight: 500;
-  color: #ff6060;
-  text-decoration: none !important;
-  margin-left: 30px;
+  ul a {
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #ff6060;
+    text-decoration: none !important;
+    margin-left: 30px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .navbar {
     margin: 30px 15px;
     align-items: center;
-  }
-  .navbar img {
-    width: 145px;
-  }
-  .navbar__link {
-    font-size: 12px;
+
+    img {
+      width: 145px;
+    }
+    ul a {
+      font-size: 12px;
+    }
   }
 }
+
