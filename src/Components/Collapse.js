@@ -21,7 +21,7 @@ function Collapse({ title, description }) {
 
   return (
     <div>
-      <div className="content" onClick={toggle}>
+      <div className="collapse-content" onClick={toggle}>
         {" "}
         <div className="headline">
           <p>{title}</p>
