@@ -1,22 +1,20 @@
-
 import data from "../data.json";
+import FicheLogementCollapse from "../Components/FicheLogementCollapse";
 import Card from "../Components/Card";
 import CardFicheLogement from "../Components/CardFicheLogement";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 
-import React from 'react'
+const FicheLogement = () => {
 
 
-export default function () {
-  
   return (
     <div>
-     
-    <CardFicheLogement title={data.title} />
+      <FicheLogementCollapse description={data.description} />
+      <CardFicheLogement title={data.title} />
 
     </div>
-  )
-}
+  );
+};
 
-  
+export default FicheLogement;

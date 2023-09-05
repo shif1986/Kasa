@@ -20,6 +20,14 @@ export default function CardFicheLogement() {
     } else {
       setIndexSlide(indexSlide - 1);
     }
+
+    // // counter
+    // counters.forEach((dot) =>{
+    //  counter.map()
+    // }
+    // )
+
+    // });
   };
   const next = () => {
     if (indexSlide == logement.pictures.length - 1) {
@@ -28,23 +36,6 @@ export default function CardFicheLogement() {
       setIndexSlide(indexSlide + 1);
     }
   };
-
-  // function fichelogement collapse
-
-  // function CollapseFicheLogement({ description }) {
-  //   const [openTab, setOpenTab] = useState(false);
-  //   const toggle = () => {
-  //     setOpenTab(!openTab);
-  //   };
-  //   return (
-  //     <div>
-  //       <h3> {Description} </h3>
-      
-      
-  //     </div>
-  //     );
-  // }
-
   // counter 1/5
   return (
     <div className="container-gallery">
@@ -52,7 +43,17 @@ export default function CardFicheLogement() {
         <i class="fa-solid fa-chevron-left"></i>
       </p>
       <img src={logement.pictures[indexSlide]} />
-      <p>1/5</p>
+
+      {/* section Dot */}
+      <div class="counters">
+        <div class="counter counter_selected"></div>
+        <div class="counter">1</div>
+        <div class="counter">2</div>
+        <div class="counter">3</div>
+        <div class="counter">4</div>
+        <div class="counter">5</div>
+      </div>
+
       <p className="arrow-right" onClick={next}>
         <i class="fa-solid fa-chevron-right"></i>
       </p>
@@ -80,14 +81,8 @@ export default function CardFicheLogement() {
             <div className="rating">
               <p> {logement.rating} </p>
             </div>
-
-            {/* {logement.description} */}
-
-            <div>
-             {/* <h3 className="description"> {logement.description} </h3> */}
-      
-      
-          </div>
+            
+       
           </div>
         </article>
       </div>
