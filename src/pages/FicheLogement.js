@@ -7,13 +7,8 @@ import { useState } from "react";
 
 const FicheLogement = () => {
 
-
   return (
-    <div>
-      <FicheLogementCollapse description={data.description} />
       <CardFicheLogement title={data.title} />
-
-    </div>
   );
 };
 
