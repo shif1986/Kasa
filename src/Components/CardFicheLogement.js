@@ -3,6 +3,8 @@ import "../style/components/_card-fiche-logement.scss";
 import data from "../data.json";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import Collapse from "./Collapse";
+import Stars from "../assets/icons/Stars";
 
 export default function CardFicheLogement() {
   // useparam chercher les element dans url
@@ -12,7 +14,6 @@ export default function CardFicheLogement() {
   const logement = data.find((item) => item.id === id);
   // useState function
   const [indexSlide, setIndexSlide] = useState(0);
-  console.log(indexSlide);
 
   const previous = () => {
     if (indexSlide == 0) {
@@ -36,27 +37,39 @@ export default function CardFicheLogement() {
       setIndexSlide(indexSlide + 1);
     }
   };
-  // counter 1/5
+
+  const displayStars = (rating) => {
+    const arrayStars = [];
+    for (let i = 0; i < 5; i++) {
+      if (i < rating) {
+        arrayStars.push(<Stars fill={"#FF6060"} />);
+      } else {
+        arrayStars.push(<Stars fill={"#E3E3E3"} />);
+      }
+    }
+    return arrayStars;
+  };
+
   return (
     <div className="container-gallery">
-      <p className="arrow-left" onClick={previous}>
-        <i class="fa-solid fa-chevron-left"></i>
-      </p>
-      <img src={logement.pictures[indexSlide]} />
-
-      {/* section Dot */}
-      <div class="counters">
-        <div class="counter counter_selected"></div>
-        <div class="counter">1</div>
-        <div class="counter">2</div>
-        <div class="counter">3</div>
-        <div class="counter">4</div>
-        <div class="counter">5</div>
+      <div className="cards">
+        {logement.pictures.length > 1 && (
+          <p className="arrow-left" onClick={previous}>
+            <i class="fa-solid fa-chevron-left"></i>
+          </p>
+        )}
+        <img src={logement.pictures[indexSlide]} />
+        {logement.pictures.length > 1 && (
+          <>
+            <span className="carousel-counter">
+              {indexSlide + 1}/{logement.pictures.length}
+            </span>
+            <p className="arrow-right" onClick={next}>
+              <i class="fa-solid fa-chevron-right"></i>
+            </p>
+          </>
+        )}
       </div>
-
-      <p className="arrow-right" onClick={next}>
-        <i class="fa-solid fa-chevron-right"></i>
-      </p>
 
       {/* Contenu de fiche logement- title, nom de Host etc */}
       <div className="contenu">
@@ -66,7 +79,11 @@ export default function CardFicheLogement() {
             <p> {logement.location} </p>
 
             <div className="tag">
-              <p> {logement.tags} </p>
+              <ul>
+                {logement.tags.map((tag) => (
+                  <li>{tag}</li>
+                ))}
+              </ul>
             </div>
           </div>
           <div className="host">
@@ -74,17 +91,22 @@ export default function CardFicheLogement() {
               <div className="name">
                 <p> {logement.host.name} </p>
               </div>
-
               <img src={logement.host.picture} />
             </div>
 
             <div className="rating">
-              <p> {logement.rating} </p>
+              {displayStars(logement.rating).map((item) => item)}
             </div>
-            
-       
           </div>
+         
         </article>
+        <div className="collapse-container">
+            <Collapse 
+              title={"Description"}
+              description={logement.description}
+            />
+            <Collapse title={"Equipements"} description={logement.equipments} />
+          </div>
       </div>
     </div>
   );

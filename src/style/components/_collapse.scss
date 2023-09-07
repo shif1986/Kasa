@@ -8,20 +8,21 @@ $relative :  relative;
   align-items: center;
 }
 
-.container-collapse p {
-  width: 1023px;
+.title-collapse {
+  width: 100%;
   background-color: $backround-colors;
   color: $font-color;
   font-size: 24px;
   height: 52px;
   padding: 10px 20px 10px 15px;
   border-radius: 5px;
+  display: block;
 }
-.container-collapse {
+/*.container-collapse {
  @include flex-center();
   position: $relative ;
   margin-top: 30px;
-}
+}*/
 .fa-solid {
   font-size: 24px;
   display: flex;
@@ -37,7 +38,7 @@ $relative :  relative;
 
 .description {
   overflow-wrap: break-word;
-  inline-size: 64rem;
+  inline-size: 100%;
   padding: 15px;
   background-color: #f6f6f6;
   color: $backround-colors;
@@ -45,7 +46,7 @@ $relative :  relative;
 }
 
 @media screen and (max-width: 768px) {
-  .container-collapse p {
+  .title-collapse {
     width: 335px;
   }
   .banner-about {
