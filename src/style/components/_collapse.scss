@@ -10,12 +10,13 @@ $relative :  relative;
 
 .title-collapse {
   width: 100%;
+  height: 68%;
   background-color: $backround-colors;
   color: $font-color;
   font-size: 24px;
   height: 52px;
   padding: 10px 20px 10px 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   display: block;
 }
 /*.container-collapse {
@@ -27,27 +28,63 @@ $relative :  relative;
   font-size: 24px;
   display: flex;
   justify-content: end;
+  align-items: center;
   position: $relative ;
   bottom: 35px;
   right: 25px;
   color: $font-color;
   // transform: .8s ease-in-out;
   // transform:rotate(45deg);
-  transition: all 1s ease-out;
+  transform: translateY(0);
+  transition: transform 0.1s linear;
 }
+  
+
+
 
 .description {
   overflow-wrap: break-word;
   inline-size: 100%;
+  height: 68%;
   padding: 15px;
   background-color: #f6f6f6;
   color: $backround-colors;
   margin: -25px 0 20px 0;
+  font-size: 18px;
+  border-radius: 5px;
+ 
+ 
 }
 
+
+.fa-solid::before::after{
+  transform: rotate(0) translateY(0);
+  transition: transform 0.1s linear;
+}
+
+
+
+.isToggled{
+  animation: toggle 1s linear;
+}
+@keyframes toggle{
+0%{
+  opacity: 0;
+}
+100%{
+  opacity: 1;
+}
+}
+.not-toggle{
+  opacity: 0;
+}
 @media screen and (max-width: 768px) {
   .title-collapse {
-    width: 335px;
+   width: 100%;
+   height: 100%;
+   font-size: 16px;
+  display: flex;
+   align-items: center;
   }
   .banner-about {
     padding: 20px;
@@ -56,6 +93,11 @@ $relative :  relative;
   }
 
   .description {
-    inline-size: 21rem;
+    inline-size: 100%;
+    font-size: 15px;
+  }
+  .fa-solid {
+   top: -30px;
+ 
   }
 }

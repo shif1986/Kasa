@@ -101,11 +101,14 @@ export default function CardFicheLogement() {
          
         </article>
         <div className="collapse-container">
+            <span className="fl-collapse-title">
             <Collapse 
-              title={"Description"}
-              description={logement.description}
-            />
+              title={"Description"}description={logement.description}/>
+            </span>
+            <span className="fl-collapse-description">
             <Collapse title={"Equipements"} description={logement.equipments} />
+            </span>
+          
           </div>
       </div>
     </div>
