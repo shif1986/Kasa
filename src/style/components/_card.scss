@@ -7,8 +7,7 @@
   margin: 0;
   padding: 0;
 }
-article {
-}
+
 .card-container {
   background: #f6f6f6;
   border-radius: 25px;
@@ -20,7 +19,6 @@ article {
   column-gap: 50px;
   margin: 30px 100px;
   padding: 30px 50px 50px 50px;
-  position: relative;
 
   img {
     width: 100%;
@@ -29,16 +27,27 @@ article {
     object-fit: cover;
     filter: brightness(75%) saturate(140%);
     margin-top: 30px;
+    transition: 600ms linear;
+  }
+
+  .card__link {
+    position: relative;
+    display: flex;
+  }
+
+  img:hover {
+    transition: transform 300ms;
+    transform: scale(1.1);
   }
   p {
     font-weight: 500;
-    color: #313584;
+    color: #fff;
     font-size: 18px;
     overflow-wrap: break-word;
     inline-size: 250px;
     position: absolute;
-    top: 18rem;
-    left: 15px;
+    left: 10px;
+    bottom: 30px;
   }
 }
 
@@ -48,6 +57,7 @@ article {
     background: #ffffff;
     display: flex;
     flex-direction: column;
-    padding: 25px 15px 0 15px;
+    padding: 0px 15px 0 15px;
+    gap: 0;
   }
 }

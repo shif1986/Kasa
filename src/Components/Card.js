@@ -16,8 +16,8 @@ export default function Card({ gallery }) {
       {gallery.map((card) => (
         <article key={card.id}>
           <NavLink className="card__link" to={`/fiche-logement/${card.id} `}>
-            <p> {card.title} </p>
             <img src={card.cover} />
+            <p> {card.title} </p>
           </NavLink>
         </article>
 

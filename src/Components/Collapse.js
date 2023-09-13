@@ -28,7 +28,7 @@ function Collapse({title, description}) {
                 )}
             </div>
             {isOpen &&
-                <div className="description">
+                <div className={`description ${isOpen ? "isToggled" : ""}`}>
                     {Array.isArray(description)
                         ? <ul>{description.map(item => <li>{item}</li>)} </ul>
                         : <span>{description}</span>
