@@ -14,10 +14,10 @@ export default function Card({ gallery }) {
       {/* Container and gallery */}
 
       {gallery.map((card) => (
-        <article key={card.id}>
+        <article className="card" key={card.id}>
           <NavLink className="card__link" to={`/fiche-logement/${card.id} `}>
             <img src={card.cover} />
-            <p> {card.title} </p>
+            <p className="card__label" > {card.title} </p>
           </NavLink>
         </article>
 

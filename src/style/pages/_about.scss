@@ -1,11 +1,21 @@
+
 .container-collapse {
   max-width: 80%;
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 @media screen and (max-width: 768px){
+  body{
+    display: flex;
+    flex-direction: column;
+  }
   .container-collapse{
     max-width: 100%;
     margin: 0 15px -40px 15px;
+  }
+  footer{
+  display: flex;
+  flex-direction: column;
   }
 }

@@ -31,6 +31,7 @@ export default function CardFicheLogement() {
     // });
   };
   const next = () => {
+    
     if (indexSlide == logement.pictures.length - 1) {
       setIndexSlide(0);
     } else {
@@ -57,6 +58,7 @@ export default function CardFicheLogement() {
           <p className="arrow-left" onClick={previous}>
             <i class="fa-solid fa-chevron-left"></i>
           </p>
+         
         )}
         <img src={logement.pictures[indexSlide]} />
         {logement.pictures.length > 1 && (
