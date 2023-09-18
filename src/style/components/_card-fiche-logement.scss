@@ -3,13 +3,42 @@ $relative: relative;
 $basicColor: #ff6060;
 $alternativeColor: #ffff;
 $basicBackround: #ff6060;
+$borderRadius: 10px;
+$fontSize14: 14px;
+$fontSize500: 500;
+$fontFamily: Montserrat;
+$width100 :100%;
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+@mixin flexEnd{
+  display: flex;
+  justify-content: flex-end;
+  text-align: end;
+}
+@mixin wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin center-children {
+  display: flex;
+  align-items: center;
+}
+@mixin space-between {
+  display: flex;
+  justify-content: space-between;
+}
 
 .container-gallery {
   margin: 30px 100px;
   position: relative;
 
+
   img {
-    width: 100%;
+    width: $width100;
     height: 450px;
     // height: 100%;
     object-fit: cover;
@@ -17,7 +46,7 @@ $basicBackround: #ff6060;
   }
   p .fa-solid {
     font-size: 75px;
-    color: #ffff;
+    color: $alternativeColor;
   }
   .arrow-left {
     position: $absolute;
@@ -30,29 +59,25 @@ $basicBackround: #ff6060;
     right: 3rem;
   }
   span.carousel-counter {
-    display: flex;
+    @include center-children;
     justify-content: center;
-    align-items: center;
     position: $relative;
     bottom: 5rem;
 
-    color: rgb(255, 255, 255);
+    color: $alternativeColor;
     font-size: 18px;
   }
 }
+
 // section d'information
 .contenu {
   margin-top: 30px;
 
   .infos {
-    display: flex;
-    justify-content: space-between;
+    @include space-between();
     title {
-      display: flex;
       justify-content: flex-start;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      @include center-children;
     }
     h2,
     p {
@@ -67,26 +92,24 @@ $basicBackround: #ff6060;
     }
     .tag ul {
       color: $alternativeColor;
-      display: flex;
-      align-items: center;
+      @include center-children;
       margin: 25px 0 30px 0;
-      border-radius: 10px;
-      font-size: 14px;
-      font-weight: 500;
+      border-radius: $borderRadius;
+      font-size: $fontSize14;
+      font-weight: $fontSize500;
       gap: 2rem;
       li {
         background-color: $basicBackround;
         padding: 5px 30px 5px 30px;
-        border-radius: 10px;
-        font-family: Montserrat;
-        font-size: 14px;
-        font-weight: 500;
+        border-radius: $borderRadius;
+        font-family: $fontFamily;
+        font-size: $fontSize14;
+        font-weight: $fontSize500;
       }
     }
 
     .host {
-      display: flex;
-      flex-direction: column;
+      @include column;
       padding: 0;
       margin: 0;
       img {
@@ -100,9 +123,7 @@ $basicBackround: #ff6060;
         margin-left: 47px;
         .name p {
           width: 80px;
-          display: flex;
-          justify-content: flex-end;
-          text-align: end;
+        @include flexEnd;
           padding-right: 20px;
           line-height: 20px;
           font-size: 18px;
@@ -121,23 +142,20 @@ $basicBackround: #ff6060;
     // }
   }
   .collapse-container {
-    display: flex;
-    justify-content: space-between;
+    @include space-between();
     gap: 50px;
     margin-top: 5px;
-    .fl-collapse-title {
-      width: 100%;
+    .fl-collapse-title, .fl-collapse-description {
+      width: $width100;
     }
-    .fl-collapse-description {
-      width: 100%;
-    }
+   
   }
 }
 @media screen and (max-width: 768px) {
   .container-gallery {
     margin: 0 15px;
     img {
-      width: 100%;
+      width: $width100;
       height: 255px;
     }
     p .fa-solid {
@@ -158,11 +176,9 @@ $basicBackround: #ff6060;
   .contenu {
     margin-top: -15px;
 
-    .infos {
-      flex-direction: column;
-      .collapse-container {
-        flex-direction: column;
-      }
+    .infos,
+    .collapse-container {
+      @include column;
 
       .title h2 {
         font-size: 22px;
@@ -175,20 +191,14 @@ $basicBackround: #ff6060;
         margin-bottom: 10px;
         line-height: 50px;
       }
-      .tag ul {
-        display: flex;
-        flex-wrap: wrap;
-       align-items: center;
-        width: 100%;
-        li{
-          display: flex;
-          flex-wrap: wrap;
-        }
+      .tag ul, li {
+        @include wrap;
+
+       
       }
       .host {
-        align-items: center;
+        @include center-children;
         flex-direction: row-reverse;
-        text-align: center;
         justify-content: space-between;
         margin-bottom: 20px;
         img {
@@ -196,8 +206,7 @@ $basicBackround: #ff6060;
           height: 45px;
         }
         .name-pic {
-          display: flex;
-          justify-content: end;
+          @include flexEnd;
           .name p {
             font-size: 14px;
           }
@@ -212,8 +221,7 @@ $basicBackround: #ff6060;
       }
     }
     .collapse-container {
-      display: flex;
-      flex-direction: column;
+      @include column;
       gap: 0;
       margin-bottom: -40px;
     }
@@ -222,3 +230,6 @@ $basicBackround: #ff6060;
     margin-top: -20px;
   }
 }
+// @media screen and (min-width(765) and max-width: 768px){
+
+// }

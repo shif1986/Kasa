@@ -1,12 +1,12 @@
-$backround-colors:#ff6060;
+$backround-colors: #ff6060;
 $font-color: #ffffff;
-$relative :  relative;
-@mixin flex-center{
+$relative: relative;
+@mixin flex-center {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 
 .title-collapse {
   width: 100%;
@@ -26,10 +26,10 @@ $relative :  relative;
 }*/
 .fa-solid {
   font-size: 24px;
-  display: flex;
+  @include flex-center();
   justify-content: end;
-  align-items: center;
-  position: $relative ;
+
+  position: $relative;
   bottom: 35px;
   right: 25px;
   color: $font-color;
@@ -38,9 +38,6 @@ $relative :  relative;
   transform: translateY(0);
   transition: transform 0.1s linear;
 }
-  
-
-
 
 .description {
   overflow-wrap: break-word;
@@ -52,39 +49,35 @@ $relative :  relative;
   margin: -25px 0 20px 0;
   font-size: 18px;
   border-radius: 5px;
- 
- 
 }
 
-
-.fa-solid::before::after{
+.fa-solid::before::after {
   transform: rotate(0) translateY(0);
   transition: transform 0.1s linear;
 }
 
-
-
-.isToggled{
+.isToggled {
   animation: toggle 1s linear;
 }
-@keyframes toggle{
-0%{
-  opacity: 0;
+@keyframes toggle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-100%{
-  opacity: 1;
-}
-}
-.not-toggle{
+.not-toggle {
   opacity: 0;
 }
 @media screen and (max-width: 768px) {
   .title-collapse {
-   width: 100%;
-   height: 100%;
-   font-size: 16px;
-  display: flex;
-   align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    // margin-bottom: 50px;
   }
   .banner-about {
     padding: 20px;
@@ -97,7 +90,6 @@ $relative :  relative;
     font-size: 15px;
   }
   .fa-solid {
-   top: -30px;
- 
+    top: -30px;
   }
 }

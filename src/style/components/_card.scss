@@ -28,26 +28,26 @@
     filter: brightness(75%) saturate(140%);
     margin-top: 30px;
     transition: 600ms linear;
+    &:hover {
+      transition: transform 300ms;
+      transform: scale(1.1);
+    }
   }
-
-  .card__link {
-    position: relative;
-    display: flex;
-  }
-
-  img:hover {
-    transition: transform 300ms;
-    transform: scale(1.1);
-  }
-  p {
-    font-weight: 500;
-    color: #fff;
-    font-size: 18px;
-    overflow-wrap: break-word;
-    inline-size: 250px;
-    position: absolute;
-    left: 10px;
-    bottom: 30px;
+  .card {
+    &__link {
+      position: relative;
+      display: flex;
+    }
+    &__label {
+      font-weight: 500;
+      color: #fff;
+      font-size: 18px;
+      overflow-wrap: break-word;
+      inline-size: 250px;
+      position: absolute;
+      left: 10px;
+      bottom: 30px;
+    }
   }
 }
 
