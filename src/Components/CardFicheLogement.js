@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import Collapse from "./Collapse";
 import Stars from "../assets/icons/Stars";
+import NotFound from "../pages/NotFound";
 
 export default function CardFicheLogement() {
   // useparam chercher les element dans url
@@ -14,6 +15,13 @@ export default function CardFicheLogement() {
   const logement = data.find((item) => item.id === id);
   // useState function
   const [indexSlide, setIndexSlide] = useState(0);
+  // On vérifie si le logement existe ou pas si ce n'est pas le cas il renvoie le 404
+  if (!logement) {
+    return <NotFound />
+    
+  }
+
+
 
   const previous = () => {
     if (indexSlide == 0) {
