@@ -18,7 +18,6 @@ export default function CardFicheLogement() {
   // On vérifie si le logement existe ou pas si ce n'est pas le cas il renvoie le 404
   if (!logement) {
     return <NotFound />
-    
   }
 
 
